@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-death',
-  templateUrl: './death.page.html',
-  styleUrls: ['./death.page.scss'],
+    selector: 'app-deaths',
+    templateUrl: './death.page.html',
+    styleUrls: ['./death.page.scss'],
 })
-export class DeathPage implements OnInit {
+export class DeathsPage implements OnInit {
 
-  constructor() { }
+    deaths: Observable<any>;
 
-  ngOnInit() {
-  }
+    constructor(private router: Router, private api: ApiService) { }
+
+    ngOnInit() {
+        this.deaths = this.api.getDeaths();
+        this.deaths.subscribe(data => {
+            console.log('my data', data);
+        });
+    }
 
 }

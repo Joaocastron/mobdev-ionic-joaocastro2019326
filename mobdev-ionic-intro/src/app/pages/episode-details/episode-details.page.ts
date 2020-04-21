@@ -1,3 +1,4 @@
+
 import { FavouriteService } from '../../services/favourite.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -20,8 +21,8 @@ export class EpisodeDetailsPage implements OnInit {
 
     this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.api.getEpisode(this.episode).subscribe(res => {
-      this.episode = res;
+    this.api.getEpisode(this.episodeId).subscribe(res => {
+      this.episode = res[0];
     });
 
     this.favouriteService.isFavourite(this.episodeId).then(isFav => {

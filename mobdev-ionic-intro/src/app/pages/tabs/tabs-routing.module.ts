@@ -20,7 +20,7 @@ const routes: Routes = [
                 ]
             },
             {
-                path: 'characters',
+               path: 'characters',
                 children: [
                     {
                         path: '',

@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DeathPageRoutingModule } from './death-routing.module';
 
-import { DeathPage } from './death.page';
+import { DeathsPage } from './death.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { DeathPage } from './death.page';
     IonicModule,
     DeathPageRoutingModule
   ],
-  declarations: [DeathPage]
+  declarations: [DeathsPage]
 })
 export class DeathPageModule {}
